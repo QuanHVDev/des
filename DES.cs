@@ -28,7 +28,7 @@ public class DES
     46, 42, 50, 36, 29, 32
     };
 
-    readonly int[] IP_Table = {
+    public static readonly int[] IP_Table = {
     58, 50, 42, 34, 26, 18, 10, 2,
     60, 52, 44, 36, 28, 20, 12, 4,
     62, 54, 46, 38, 30, 22, 14, 6,
@@ -39,7 +39,7 @@ public class DES
     63, 55, 47, 39, 31, 23, 15, 7
 };
 
-    readonly int[] IP_Table_1 = {
+    public static readonly int[] IP_Table_1 = {
     40, 8, 48, 16, 56, 24, 64, 32,
     39, 7, 47, 15, 55, 23, 63, 31,
     38, 6, 46, 14, 54, 22, 62, 30,
@@ -50,7 +50,7 @@ public class DES
     33, 1, 41, 9, 49, 17, 57, 25
     };
 
-    readonly int[] EP_Table = {
+    public static readonly int[] EP_Table = {
     32, 1, 2, 3, 4, 5,
     4, 5, 6, 7, 8, 9,
     8, 9, 10, 11, 12, 13,
@@ -61,58 +61,58 @@ public class DES
     28, 29, 30, 31, 32, 1
 };
 
-    readonly int[,] S_Box_1 = {
+    public static readonly int[,] S_Box_1 = {
     {14, 4, 13, 1, 2, 15, 11, 8, 3, 10, 6, 12, 5, 9, 0, 7},
     {0, 15, 7, 4, 14, 2, 13, 1, 10, 6, 12, 11, 9, 5, 3, 8},
     {4, 1, 14, 8, 13, 6, 2, 11, 15, 12, 9, 7, 3, 10, 5, 0},
     {15, 12, 8, 2, 4, 9, 1, 7, 5, 11, 3, 14, 10, 0, 6, 13}
 };
-    readonly int[,] S_Box_2 = {
+    public static readonly int[,] S_Box_2 = {
     {15,  1,  8, 14,  6, 11,  3,  4,  9,  7,  2, 13, 12,  0,  5, 10},
     { 3, 13,  4,  7, 15,  2,  8, 14, 12,  0,  1, 10,  6,  9, 11,  5},
     { 0, 14,  7, 11, 10,  4, 13,  1,  5,  8, 12,  6,  9,  3,  2, 15},
     {13,  8, 10,  1,  3, 15,  4,  2, 11,  6,  7, 12,  0,  5, 14,  9}
 };
-    readonly int[,] S_Box_3 = {
+    public static readonly int[,] S_Box_3 = {
     {10,  0,  9, 14,  6,  3, 15,  5,  1, 13, 12,  7, 11,  4,  2,  8},
     {13,  7,  0,  9,  3,  4,  6, 10,  2,  8,  5, 14, 12, 11, 15,  1},
     {13,  6,  4,  9,  8, 15,  3,  0, 11,  1,  2, 12,  5, 10, 14,  7},
     { 1, 10, 13,  0,  6,  9,  8,  7,  4, 15, 14,  3, 11,  5,  2, 12}
 };
-    readonly int[,] S_Box_4 = {
+    public static readonly int[,] S_Box_4 = {
     { 7, 13, 14,  3,  0,  6,  9, 10,  1,  2,  8,  5, 11, 12,  4, 15},
     {13,  8, 11,  5,  6, 15,  0,  3,  4,  7,  2, 12,  1, 10, 14,  9},
     {10,  6,  9,  0, 12, 11,  7, 13, 15,  1,  3, 14,  5,  2,  8,  4},
     { 3, 15,  0,  6, 10,  1, 13,  8,  9,  4,  5, 11, 12,  7,  2, 14}
 };
 
-    readonly int[,] S_Box_5 = {
+    public static readonly int[,] S_Box_5 = {
     { 2, 12,  4,  1,  7, 10, 11,  6,  8,  5,  3, 15, 13,  0, 14,  9},
     {14, 11,  2, 12,  4,  7, 13,  1,  5,  0, 15, 10,  3,  9,  8,  6},
     { 4,  2,  1, 11, 10, 13,  7,  8, 15,  9, 12,  5,  6,  3,  0, 14},
     {11,  8, 12,  7,  1, 14,  2, 13,  6, 15,  0,  9, 10,  4,  5,  3}
 };
 
-    readonly int[,] S_Box_6 = {
+    public static readonly int[,] S_Box_6 = {
     {12,  1, 10, 15,  9,  2,  6,  8,  0, 13,  3,  4, 14,  7,  5, 11},
     {10, 15,  4,  2,  7, 12,  9,  5,  6,  1, 13, 14,  0, 11,  3,  8},
     { 9, 14, 15,  5,  2,  8, 12,  3,  7,  0,  4, 10,  1, 13, 11,  6},
     { 4,  3,  2, 12,  9,  5, 15, 10, 11, 14,  1,  7,  6,  0,  8, 13}
 };
-    readonly int[,] S_Box_7 = {
+    public static readonly int[,] S_Box_7 = {
     { 4, 11,  2, 14, 15,  0,  8, 13,  3, 12,  9,  7,  5, 10,  6,  1},
     {13,  0, 11,  7,  4,  9,  1, 10, 14,  3,  5, 12,  2, 15,  8,  6},
     { 1,  4, 11, 13, 12,  3,  7, 14, 10, 15,  6,  8,  0,  5,  9,  2},
     { 6, 11, 13,  8,  1,  4, 10,  7,  9,  5,  0, 15, 14,  2,  3, 12}
 };
-    readonly int[,] S_Box_8 = {
+    public static readonly int[,] S_Box_8 = {
     {13,  2,  8,  4,  6, 15, 11,  1, 10,  9,  3, 14,  5,  0, 12,  7},
     { 1, 15, 13,  8, 10,  3,  7,  4, 12,  5,  6, 11,  0, 14,  9,  2},
     { 7, 11,  4,  1,  9, 12, 14,  2,  0,  6, 10, 13, 15,  3,  5,  8},
     { 2,  1, 14,  7,  4, 10,  8, 13, 15, 12,  9,  0,  3,  5,  6, 11}
 };
 
-    readonly int[] P_Table = { 16,  7, 20, 21, 29, 12, 28, 17, 1, 15, 23, 26, 5, 18, 31, 10, 2,  8, 24, 14, 32, 27, 3,  9, 19, 13, 30,  6, 22, 11,  4, 25};
+    public static readonly int[] P_Table = { 16,  7, 20, 21, 29, 12, 28, 17, 1, 15, 23, 26, 5, 18, 31, 10, 2,  8, 24, 14, 32, 27, 3,  9, 19, 13, 30,  6, 22, 11,  4, 25};
 
 
     readonly int[] dichTraiCnDn = { 1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1 };
@@ -131,6 +131,8 @@ public class DES
     }
 
     public DES(string key){
+        kqDictionary = new Dictionary<int, (string subkey, string Li, string Ri, string Ei, string Ei_XOr_Ki, string S_Box, string P_S_Box, string P_Xor_Li)>();
+
         CreateKey(key);
     }
 
@@ -149,8 +151,7 @@ public class DES
         }
     }
 
-    // m = 00123456789ABCDE k=0133457799BBCDFF
-    // m=0123D56789ABCDE8 k=183457799B3CDFF2
+    
 
     private void EncodePlainText(string m)
     {
@@ -177,12 +178,7 @@ public class DES
             string keyBinary = ChangeKeyKToBinary(item.subkey);
             item.Li = kqDictionary[indexMaHoa - 1].Ri;
 
-            string ER0 = "";
-            foreach (var index in EP_Table)
-            {
-                ER0 += ChangeKeyKToBinary(kqDictionary[indexMaHoa - 1].Ri)[index - 1];
-            }
-            //Console.WriteLine("ER0" + ER0);
+            string ER0 = CodingWith_EPTable(ChangeKeyKToBinary(item.Li));
             item.Ei = ChangeBinaryToHexa(ER0);
 
             // xor k1 va er0
@@ -198,31 +194,39 @@ public class DES
             item.S_Box = TraBangSBoxI(item.Ei_XOr_Ki);
             item.P_S_Box = TraBangP(item.S_Box);
 
-
-            for (int i = 0; i < item.P_S_Box.Length / 8; i++)
-            {
-                string L0_i = ChangeKeyKToBinary(kqDictionary[indexMaHoa - 1].Li).Substring(i * 8, 8);
-                string P_i = item.P_S_Box.Substring(i * 8, 8);
-
-                string binaryDoXor = Do_XOR(L0_i, P_i);
-                item.P_Xor_Li += ChangeBinaryToHexa(binaryDoXor);
-            }
-
+            item.P_Xor_Li = ChangeBinaryToHexa(Do_XOR(ChangeKeyKToBinary(kqDictionary[indexMaHoa - 1].Li), item.P_S_Box));
+            
             item.Ei_XOr_Ki = ChangeBinaryToHexa(item.Ei_XOr_Ki);
             item.S_Box = ChangeBinaryToHexa(item.S_Box);
             item.P_S_Box = ChangeBinaryToHexa(item.P_S_Box);
             item.Ri = item.P_Xor_Li;
 
             kqDictionary[indexMaHoa] = item;
-            Console.WriteLine($"kqDictionary[{indexMaHoa}]: " +
-                $"\n kqDictionary[{indexMaHoa}].subkey:{kqDictionary[indexMaHoa].subkey} " +
-                $"\n kqDictionary[{indexMaHoa}].Li:{kqDictionary[indexMaHoa].Li}" +
-                $"\n kqDictionary[{indexMaHoa}].Ri:{kqDictionary[indexMaHoa].Ri}" +
-                $"\n kqDictionary[{indexMaHoa}].Ei:{kqDictionary[indexMaHoa].Ei}" +
-                $"\n kqDictionary[{indexMaHoa}].Ei_XOr_Ki:{kqDictionary[indexMaHoa].Ei_XOr_Ki}" +
-                $"\n kqDictionary[{indexMaHoa}].S_Box:{kqDictionary[indexMaHoa].S_Box}" +
-                $"\n kqDictionary[{indexMaHoa}].P_S_Box:{kqDictionary[indexMaHoa].P_S_Box}" +
-                $"\n kqDictionary[{indexMaHoa}].P_Xor_Li:{kqDictionary[indexMaHoa].P_Xor_Li}");
+            if (true)
+            {
+                Console.WriteLine($"kqDictionary[{indexMaHoa}]: " +
+                $"\n kqDictionary[{indexMaHoa}].subkey:{(kqDictionary[indexMaHoa].subkey)} " +
+                $"\n kqDictionary[{indexMaHoa}].Li:{(kqDictionary[indexMaHoa].Li)}" +
+                $"\n kqDictionary[{indexMaHoa}].Ri:{(kqDictionary[indexMaHoa].Ri)}" +
+                $"\n kqDictionary[{indexMaHoa}].Ei:{(kqDictionary[indexMaHoa].Ei)}" +
+                $"\n kqDictionary[{indexMaHoa}].Ei_XOr_Ki:{(kqDictionary[indexMaHoa].Ei_XOr_Ki)}" +
+                $"\n kqDictionary[{indexMaHoa}].S_Box:{(kqDictionary[indexMaHoa].S_Box)}" +
+                $"\n kqDictionary[{indexMaHoa}].P_S_Box:{(kqDictionary[indexMaHoa].P_S_Box)}" +
+                $"\n kqDictionary[{indexMaHoa}].P_Xor_Li:{(kqDictionary[indexMaHoa].P_Xor_Li)}");
+            }
+            else
+            {
+                Console.WriteLine($"kqDictionary[{indexMaHoa}]: " +
+                $"\n kqDictionary[{indexMaHoa}].subkey:{ChangeKeyKToBinary(kqDictionary[indexMaHoa].subkey)} " +
+                $"\n kqDictionary[{indexMaHoa}].Li:{ChangeKeyKToBinary(kqDictionary[indexMaHoa].Li)}" +
+                $"\n kqDictionary[{indexMaHoa}].Ri:{ChangeKeyKToBinary(kqDictionary[indexMaHoa].Ri)}" +
+                $"\n kqDictionary[{indexMaHoa}].Ei:{ChangeKeyKToBinary(kqDictionary[indexMaHoa].Ei)}" +
+                $"\n kqDictionary[{indexMaHoa}].Ei_XOr_Ki:{ChangeKeyKToBinary(kqDictionary[indexMaHoa].Ei_XOr_Ki)}" +
+                $"\n kqDictionary[{indexMaHoa}].S_Box:{ChangeKeyKToBinary(kqDictionary[indexMaHoa].S_Box)}" +
+                $"\n kqDictionary[{indexMaHoa}].P_S_Box:{ChangeKeyKToBinary(kqDictionary[indexMaHoa].P_S_Box)}" +
+                $"\n kqDictionary[{indexMaHoa}].P_Xor_Li:{ChangeKeyKToBinary(kqDictionary[indexMaHoa].P_Xor_Li)}");
+            }
+            
             Console.WriteLine($"=================");
             // =========ma hoa xong===========
 
@@ -238,20 +242,42 @@ public class DES
         string swap = L0 + R0;
         swap = ChangeKeyKToBinary(swap);
 
-        string result = string.Empty;
-        foreach (int index in IP_Table_1)
-        {
-            result += swap[index - 1];
-        }
+        string result = CodingWith_IP_Table_1(swap);
 
         Console.WriteLine($"ket qua sau khi ma hoa: {ChangeBinaryToHexa(result)}");
     }
 
+    public static string CodingWith_IP_Table_1(string input)
+    {
+        string result = string.Empty;
+        foreach (int index in IP_Table_1)
+        {
+            result += input[index - 1];
+        }
 
-    private int targetLoop = 16;
+        return result;
+    }
 
-    bool isDebugDoXor = false;
-    string Do_XOR(string binary1, string binary2)
+    public static string CodingWith_EPTable(string input)
+    {
+        return CodingWithTable(input, EP_Table);
+    }
+
+    public static string CodingWithTable(string input, int[] table)
+    {
+        string output = string.Empty;
+        foreach (var index in EP_Table)
+        {
+            output += input[index - 1];
+        }
+        return output;
+    }
+
+
+    public static int targetLoop = 16;
+
+    static bool isDebugDoXor = false;
+    public static string Do_XOR(string binary1, string binary2)
     {
         int maxLength = Math.Max(binary1.Length, binary2.Length);
         binary1 = binary1.PadLeft(maxLength, '0');
@@ -269,8 +295,8 @@ public class DES
         return result;
     }
 
-    bool isDebugTraBangP = false;
-    string TraBangP(string input)
+    static bool isDebugTraBangP = false;
+    public static string TraBangP(string input)
     {
         string result = "";
         foreach (int index in P_Table) {
@@ -281,15 +307,15 @@ public class DES
         return result;
     }
 
-    private void WriteDebug(bool isWrite, string mess)
+    private static void WriteDebug(bool isWrite, string mess)
     {
         if (!isWrite) return;
 
         Console.WriteLine(mess);
     }
 
-    bool isDebugTraBangSBoxI = false;
-    string TraBangSBoxI(string ER0_Xor_K1)
+    static bool isDebugTraBangSBoxI = false;
+    public static string TraBangSBoxI(string ER0_Xor_K1)
     {
         string kq = "";
         for (int i = 0; i < ER0_Xor_K1.Length / 6; i++)
@@ -393,7 +419,7 @@ public class DES
     }
 
 
-    string ChangeBinaryToHexa(string input)
+    public static string ChangeBinaryToHexa(string input)
     {
         string output = "";
 
@@ -419,7 +445,7 @@ public class DES
         return output;
     }
 
-    string ChangeKeyKToBinary(string k)
+    public static string ChangeKeyKToBinary(string k)
     {
         //Console.WriteLine("key k:" + k);
         string binary = "";
